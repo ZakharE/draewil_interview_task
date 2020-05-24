@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends PageObjectBase {
+public class HomePage extends Page {
     @FindBy(linkText = "Войти")
     private WebElement logInButton;
 
@@ -14,7 +14,7 @@ public class HomePage extends PageObjectBase {
         PageFactory.initElements(driver, this);
     }
 
-    public AuthorizationPage gotToAuthorizationPage() {
+    public AuthorizationPage goToAuthorizationPage() {
         logInButton.click();
         return new AuthorizationPage(driver);
     }

@@ -7,7 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 @Getter
-public class EmailPage extends LogOutPage {
+public class EmailPage extends Page {
+    private final CommonHeader header;
+
     @FindBy(css = "span.mail-Message-Toolbar-Subject-Wrapper")
     private WebElement mailSubject;
     @FindBy(css = "span.mail-Message-Sender-Email.mail-ui-HoverLink-Content")
@@ -15,11 +17,9 @@ public class EmailPage extends LogOutPage {
     @FindBy(css = "div.js-message-body-content.mail-Message-Body-Content")
     private WebElement mailContent;
 
-
-    public EmailPage(WebDriver driver) {
+    EmailPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+        header = new CommonHeader(driver);
     }
-
-
 }

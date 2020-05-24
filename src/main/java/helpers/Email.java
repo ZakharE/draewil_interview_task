@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class Email {
-    private String subject;
-    private String sender;
-    private String content;
+    private final String subject;
+    private final String sender;
+    private final String content;
 }
